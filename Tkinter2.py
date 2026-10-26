@@ -43,3 +43,16 @@ def submit_data():
   nilai_dict = {"Kedokteran": biologi, "Teknik": fisika, "Bahasa": inggris}
 
   prediksi = max(nilai_dict, key=nilai_dict.get)
+  
+  try:
+    conn = sqlite3.connect("prediksi_fakultas.db")
+    cursor = conn.cursor()
+    cursor.execute(
+        """
+            INSERT INTO nilai_siswa (nama_siswa, biologi, fisika, inggris, prediksi_fakultas)
+            VALUES (?, ?, ?, ?, ?)
+        """,
+        (nama, biologi, fisika, inggris, prediksi),
+    )
+    conn.commit()
+    conn.close()
