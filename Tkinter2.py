@@ -92,3 +92,55 @@ judul.pack(pady=20)
 
 input_frame = tk.Frame(root, bg="#f0f4f7")
 input_frame.pack(pady=10)
+
+tk.Label(
+    input_frame,
+    text="Nama Siswa:",
+    font=("Helvetica", 12),
+    bg="#f0f4f7",
+    anchor="w",
+).grid(row=0, column=0, sticky="w", pady=8, padx=10)
+entry_nama = tk.Entry(input_frame, width=25, font=("Helvetica", 12))
+entry_nama.grid(row=0, column=1, pady=8)
+
+tk.Label(
+    input_frame,
+    text="Nilai Biologi:",
+    font=("Helvetica", 12),
+    bg="#f0f4f7",
+    anchor="w",
+).grid(row=1, column=0, sticky="w", pady=8, padx=10)
+entry_biologi = tk.Entry(input_frame, width=25, font=("Helvetica", 12))
+entry_biologi.grid(row=1, column=1, pady=8)
+
+tk.Label(
+    input_frame,
+    text="Nilai Fisika:",
+    font=("Helvetica", 12),
+    bg="#f0f4f7",
+    anchor="w",
+).grid(row=2, column=0, sticky="w", pady=8, padx=10)
+entry_fisika = tk.Entry(input_frame, width=25, font=("Helvetica", 12))
+entry_fisika.grid(row=2, column=1, pady=8)
+
+tk.Label(
+    input_frame,
+    text="Nilai Inggris:",
+    font=("Helvetica", 12),
+    bg="#f0f4f7",
+    anchor="w",
+).grid(row=3, column=0, sticky="w", pady=8, padx=10)
+entry_inggris = tk.Entry(input_frame, width=25, font=("Helvetica", 12))
+entry_inggris.grid(row=3, column=1, pady=8)
+
+submit_button = tk.Button(
+    root,
+    text="Submit Nilai",
+    command=submit_data,
+    font=("Helvetica", 12, "bold"),
+    bg="#ff209e",
+    fg="white",
+    padx=10,
+    pady=5,
+)
+submit_button.pack(pady=15)
