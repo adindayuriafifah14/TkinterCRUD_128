@@ -17,3 +17,9 @@ def init_db():
     """)
   conn.commit()
   conn.close()
+
+def submit_data():
+  nama = entry_nama.get().strip()
+  bio_str = entry_biologi.get().strip()
+  fis_str = entry_fisika.get().strip()
+  ing_str = entry_inggris.get().strip()
