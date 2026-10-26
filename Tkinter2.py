@@ -39,3 +39,7 @@ def submit_data():
         "Error", "Nilai Biologi, Fisika, dan Inggris harus berupa angka!"
     )
     return
+  
+  nilai_dict = {"Kedokteran": biologi, "Teknik": fisika, "Bahasa": inggris}
+
+  prediksi = max(nilai_dict, key=nilai_dict.get)
