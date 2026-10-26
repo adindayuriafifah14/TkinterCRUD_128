@@ -56,3 +56,20 @@ def submit_data():
     )
     conn.commit()
     conn.close()
+
+    label_hasil.config(
+        text=(
+            f"Siswa: {nama}\n Hasil Prediksi Fakultas: {prediksi}\n(Data"
+            " berhasil disimpan ke SQLite!)"
+        )
+    )
+    messagebox.showinfo("Sukses", "Data berhasil disimpan ke database!")
+
+    # Kosongkan form input setelah submit
+    entry_nama.delete(0, tk.END)
+    entry_biologi.delete(0, tk.END)
+    entry_fisika.delete(0, tk.END)
+    entry_inggris.delete(0, tk.END)
+
+  except Exception as e:
+    messagebox.showerror("Error Database", f"Terjadi kesalahan: {e}")
