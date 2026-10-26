@@ -23,3 +23,19 @@ def submit_data():
   bio_str = entry_biologi.get().strip()
   fis_str = entry_fisika.get().strip()
   ing_str = entry_inggris.get().strip()
+
+  if not nama or not bio_str or not fis_str or not ing_str:
+    messagebox.showwarning(
+        "Peringatan", "Semua kolom data dan nilai harus diisi!"
+    )
+    return
+
+  try:
+    biologi = float(bio_str)
+    fisika = float(fis_str)
+    inggris = float(ing_str)
+  except ValueError:
+    messagebox.showerror(
+        "Error", "Nilai Biologi, Fisika, dan Inggris harus berupa angka!"
+    )
+    return
