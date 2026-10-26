@@ -73,3 +73,22 @@ def submit_data():
 
   except Exception as e:
     messagebox.showerror("Error Database", f"Terjadi kesalahan: {e}")
+
+init_db()
+
+root = tk.Tk()
+root.title("Aplikasi Prediksi Fakultas Pilihan")
+root.geometry("500x550")
+root.configure(bg="#f0f4f7")
+
+judul = tk.Label(
+    root,
+    text="Aplikasi Prediksi Fakultas",
+    font=("Helvetica", 18, "bold"),
+    bg="#f0f4f7",
+    fg="#333",
+)
+judul.pack(pady=20)
+
+input_frame = tk.Frame(root, bg="#f0f4f7")
+input_frame.pack(pady=10)
